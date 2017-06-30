@@ -46,25 +46,32 @@ console.info(myGn.hello("asd"));
 //
 
 interface gLength {
-  length: number;
+    length: number;
 }
 
-function logging<T extends gLength>(arg: T) : T {
-  return arg;
+function logging < T extends gLength > (arg: T): T {
+    return arg;
 }
 
 
-console.info(logging([1,3]));
+console.info(logging([1, 3]));
 // console.info(logging(2));
-console.info(logging({length:3, aa:12}));
+console.info(logging({
+    length: 3,
+    aa: 12
+}));
 
 
-function getProperties<T, K  extends  keyof T>(obj: T, key: K) {
-   return obj[key];
+function getProperties < T, K extends keyof T > (obj: T, key: K) {
+    return obj[key];
 }
 
 
-let x = {a:1, b:3, c:4};
+let x = {
+    a: 1,
+    b: 3,
+    c: 4
+};
 
 console.info(getProperties(x, "a"));
 
@@ -73,8 +80,10 @@ console.info(getProperties(x, "a"));
 //
 //
 
-function test1<T>(c: {new(): T;}): T {
-  return new c();
+function test1 < T > (c: {
+    new(): T;
+}): T {
+    return new c();
 }
 
 
@@ -98,23 +107,11 @@ class Lion extends Animal {
 }
 
 
-function createInstance<A extends Animal>(c: new() => A): A {
-   return new c();
+function createInstance < A extends Animal > (c: new() => A): A {
+    return new c();
 }
 
 
 // createInstance(Lion).keeper.nametag;  // typechecks!
 // createInstance(Bee).keeper.hasMask;   // typechecks!
 //
-
-
-
-
-
-
-
-
-
-
-
-

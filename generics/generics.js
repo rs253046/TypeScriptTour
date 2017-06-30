@@ -35,11 +35,18 @@ function logging(arg) {
 }
 console.info(logging([1, 3]));
 // console.info(logging(2));
-console.info(logging({ length: 3, aa: 12 }));
+console.info(logging({
+    length: 3,
+    aa: 12
+}));
 function getProperties(obj, key) {
     return obj[key];
 }
-var x = { a: 1, b: 3, c: 4 };
+var x = {
+    a: 1,
+    b: 3,
+    c: 4
+};
 console.info(getProperties(x, "a"));
 //Using Class Type in Generic;
 //
