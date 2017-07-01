@@ -1,0 +1,1 @@
+console.info('Type Inference')
